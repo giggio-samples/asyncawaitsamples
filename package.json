@@ -1,0 +1,13 @@
+{
+  "name": "asyncawaitsamples",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Async and Await samples",
+  "main": "async/index.js",
+  "keywords": [
+    "sample",
+    "event"
+  ],
+  "author": "Giovanni Bassi <giggio@giggio.net>",
+  "license": "Apache-2.0"
+}
