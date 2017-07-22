@@ -9,7 +9,7 @@ module.exports.getDirs = async function getDirs(dir) {
     const dirs = [];
     for (const i in contents) {
         const content = contents[i];
-        const contentFullPath = resolve(dir, contents[i]);
+        const contentFullPath = resolve(dir, content);
         const stats = await stat(contentFullPath);
         if (stats.isDirectory())
             dirs.push(content);

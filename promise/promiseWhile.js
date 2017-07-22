@@ -9,7 +9,7 @@ module.exports.getDirs = function getDirs(dir) {
         const promises = [];
         for (const i in contents) {
             const content = contents[i];
-            const contentFullPath = resolve(dir, contents[i]);
+            const contentFullPath = resolve(dir, content);
             promises.push(stat(contentFullPath).then(stats => {
                 if (stats.isDirectory())
                     return content;

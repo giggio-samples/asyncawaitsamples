@@ -5,17 +5,17 @@ module.exports.getDirs = function getDirs(dir) {
     return resume => readdir(dir, (err, contents) => {
         if (err)
             return resume(err);
-        let files = [];
+        let dirs = [];
         for (const i in contents) {
             const content = contents[i];
-            const contentFullPath = resolve(dir, contents[i]);
+            const contentFullPath = resolve(dir, content);
             stat(contentFullPath, (err, stats) => {
                 if (err)
                     return resume(err);
                 if (stats.isDirectory())
-                    files.push(content);
+                    dirs.push(content);
                 if (i == contents.length - 1)
-                    resume(null, files);
+                    resume(null, dirs);
             });
         }
     });

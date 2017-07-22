@@ -1,4 +1,5 @@
 const { getContents, getDirs, isFile } = require('./asyncFunctions');
+//const { getContents, getDirs, isFile } = require('../promise/promiseFunctions');
 const { resolve } = require('path');
 
 async function run() {

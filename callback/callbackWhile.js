@@ -7,19 +7,19 @@ module.exports.getDirs = function getDirs(dir, cb) {
             cb(err);
             return;
         }
-        let files = [];
+        let dirs = [];
         for (const i in contents) {
             const content = contents[i];
-            const contentFullPath = resolve(dir, contents[i]);
+            const contentFullPath = resolve(dir, content);
             stat(contentFullPath, (err, stats) => {
                 if (err) {
                     cb(err);
                     return;
                 }
                 if (stats.isDirectory())
-                    files.push(content);
+                    dirs.push(content);
                 if (i == contents.length - 1)
-                    cb(null, files);
+                    cb(null, dirs);
             })
         }
     })
