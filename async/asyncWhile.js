@@ -7,8 +7,7 @@ const stat = promisify(fs.stat);
 module.exports.getDirs = async function getDirs(dir) {
     const contents = await readdir(dir);
     const dirs = [];
-    for (const i in contents) {
-        const content = contents[i];
+    for (const content of contents) {
         const contentFullPath = resolve(dir, content);
         const stats = await stat(contentFullPath);
         if (stats.isDirectory())
